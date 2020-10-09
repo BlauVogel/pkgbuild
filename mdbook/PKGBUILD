@@ -1,0 +1,16 @@
+# Maintainer: Fabio 'Lolix' Loli <fabio.loli@disroot.org> -> https://github.com/FabioLolix
+# Contributor: Moritz Schönherr
+
+pkgname=mdbook
+pkgver=0.4.3
+pkgrel=1
+pkgdesc="Create book from markdown files, like Gitbook but implemented in Rust"
+url="https://github.com/rust-lang/mdBook"
+arch=(x86_64)
+license=(MPL2)
+source_x86_64=("https://github.com/rust-lang/mdBook/releases/download/v${pkgver}/mdbook-v${pkgver}-x86_64-unknown-linux-gnu.tar.gz")
+sha256sums_x86_64=('f493c5900b0267bf62ce135cfdc3f5d79038f3a0d4d29c1b9a71e681b3b36f49')
+
+package() {
+	install -D mdbook "${pkgdir}/usr/bin/mdbook"
+}
