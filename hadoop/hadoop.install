@@ -1,6 +1,5 @@
 post_install() {
-  getent group 'hadoop' >/dev/null 2>&1 || groupadd -r 'hadoop' >/dev/null
-  getent passwd 'hadoop' /dev/null 2>&1 || useradd -r -g 'hadoop' -d '/etc/hadoop' 'hadoop' >/dev/null
+  getent passwd 'hadoop' /dev/null 2>&1 || useradd -r -d '/etc/hadoop' 'hadoop' >/dev/null
 
   if [ ! -d '/etc/hadoop/.ssh' ] ; then
     mkdir -p '/etc/hadoop/.ssh'
@@ -28,5 +27,4 @@ post_upgrade() {
 
 post_remove() {
   getent passwd 'hadoop' >/dev/null 2>&1 && userdel 'hadoop' >/dev/null
-  getent group 'hadoop' >/dev/null 2>&1 && groupdel 'hadoop' >/dev/null
 }

@@ -2,7 +2,7 @@
 
 ```bash
 # 安装 jdk8
-$ sudo pacman -S jdk8-openjdk
+$ sudo pacman -S --needed jdk8-openjdk
 # 设置默认 java 环境
 $ sudo archlinux-java set java-8-openjdk
 # 设置打包者的信息
